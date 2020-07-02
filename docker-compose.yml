@@ -1,0 +1,46 @@
+version: "3.1"
+
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: jobanalyzer-grafana
+    ports:
+      - 3000:3000
+    links:
+      - db
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-worldmap-panel
+    volumes:
+      - jobanalyzer_grafanastorage:/var/lib/grafana
+
+  db:
+    restart: always
+    image: postgres
+    container_name: jobanalyzer-postgres #you can change this
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASS=admin
+      - POSTGRES_DB=job
+      - POSTGRES_PORT=5432
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - "5432:5432"
+    volumes:
+      - jobanalyzer_postgresstorage:/var/lib/jobanalyzer/postgresql/data/
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: jobanalyzer-pgadmin #you can change this
+    depends_on:
+      - db
+    ports:
+      - "5051:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@pgadmin.org
+      PGADMIN_DEFAULT_PASSWORD: admin
+    restart: always
+
+volumes:
+  jobanalyzer_postgresstorage:
+  jobanalyzer_grafanastorage:

@@ -1,0 +1,11 @@
+{
+  "jobName" : "job-name",
+  "hostName" : "--.---.--.--",
+  "jenkinsUrl" : "jenkinsUrl",
+  "jenkinsUser": "username",
+  "jenkinsPass": "pass",
+  "databaseName" : "databasename",
+  "databaseUser" : "admin",
+  "databasePass" : "admin",
+  "port" : 5432
+}

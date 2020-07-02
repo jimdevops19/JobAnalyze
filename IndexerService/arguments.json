@@ -1,0 +1,27 @@
+{
+  "create-table-only" :  {
+              "help"                        : "This will create a new table that will gather all the metadata of the specified job",
+              "required_argument"           : false,
+              "requires_value"              : false,
+              "is_boolean"                  : true
+             },
+  "insert" :  {
+              "help"                        : "If this argument specified, then this will INSERT a new row in the job's database",
+              "required_argument"           : false,
+              "requires_value"              : false,
+              "is_boolean"                  : true
+             },
+  "update" :  {
+              "help"                        : "If this argument specified, then this will UPDATE an existing row",
+              "required_argument"           : false,
+              "requires_value"              : false,
+              "is_boolean"                  : true
+             },
+
+  "filter-by" : {
+              "help"                        : "Specify filter if you chose to update",
+              "required_argument"           : false,
+              "requires_value"              : true,
+              "is_boolean"                  : false
+             }
+}
