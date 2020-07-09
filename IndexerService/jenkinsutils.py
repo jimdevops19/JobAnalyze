@@ -13,8 +13,10 @@ configuration = dict(json.loads(open('configuration.json').read()))
 
 class Job(Jenkins):
     def __init__(self,job_name):
-        Jenkins.__init__(self,url=configuration['jenkinsUrl'],username=configuration['jenkinsUser'], password=configuration['jenkinsPass'])
+        jenkins = Jenkins.__init__(self, url=configuration['jenkinsUrl'], username=configuration['jenkinsUser'], password=configuration['jenkinsPass'])
+        jenkins._session.verify = False
         self.job_name = job_name
+
 
     @property
     def extra_columns(self):
