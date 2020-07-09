@@ -1,10 +1,10 @@
 {
-  "jobName" : "job-name",
-  "hostName" : "--.---.--.--",
-  "jenkinsUrl" : "jenkinsUrl",
-  "jenkinsUser": "username",
-  "jenkinsPass": "pass",
-  "databaseName" : "databasename",
+  "jobName" : "deploy-stuff",
+  "hostName" : "10.100.102.4",
+  "jenkinsUrl" : "http://localhost:8080/",
+  "jenkinsUser": "jimdevops",
+  "jenkinsPass": "Sc1930sc1930",
+  "databaseName" : "job",
   "databaseUser" : "admin",
   "databasePass" : "admin",
   "port" : 5432
