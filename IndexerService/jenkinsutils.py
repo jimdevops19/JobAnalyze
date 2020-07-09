@@ -11,10 +11,10 @@ configuration = dict(json.loads(open('configuration.json').read()))
 #3) Job Cause (username) ['actions'][1]['causes'][0]['userName']
 #########
 
-class Job(Jenkins):
+class Job():
     def __init__(self,job_name):
-        super(Jenkins,self).__init__(self, url=configuration['jenkinsUrl'], username=configuration['jenkinsUser'], password=configuration['jenkinsPass'])
-        self._session.verify = False
+        self.j = Jenkins(configuration['jenkinsUrl'], configuration['jenkinsUser'],configuration['jenkinsPass'])
+        self.j._session.verify = False
         self.job_name = job_name
 
 
@@ -37,7 +37,7 @@ class Job(Jenkins):
 
     def get_parameters(self):
         try:
-            job_info = self.get_job_info(name=self.job_name)
+            job_info = self.j.get_job_info(name=self.job_name)
             to_return = dict(job_info['property'][0])['parameterDefinitions']
             return to_return
         except:
