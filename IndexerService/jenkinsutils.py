@@ -66,7 +66,7 @@ class Job():
         meta['number'] = 'INT'
         meta['building'] = 'BOOLEAN'
         meta['buildDuration'] = 'TEXT'
-        meta['result'] = 'TEXT'
+        meta['status'] = 'TEXT'
         meta['url'] = 'TEXT'
 
         return meta
