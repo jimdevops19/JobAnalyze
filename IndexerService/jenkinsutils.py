@@ -20,7 +20,7 @@ class Job():
 
     @property
     def extra_columns(self):
-        return ['userId','userName','currentStage','teardownStatus']
+        return ['userId','userName','currentStage','status','teardownStatus']
 
 
     @property
@@ -58,7 +58,7 @@ class Job():
             raise Exception(f"Something went wrong with receiving parameters from the job {self.job_name}. Are you sure this job exists?")
 
     def get_meta_parameters(self):
-        return ['number','building','buildDuration','result','url']
+        return ['number','building','buildDuration','url']
 
     def get_meta_query(self):
         # number going to be in the column as INT type and not text
@@ -66,13 +66,12 @@ class Job():
         meta['number'] = 'INT'
         meta['building'] = 'BOOLEAN'
         meta['buildDuration'] = 'TEXT'
-        meta['status'] = 'TEXT'
         meta['url'] = 'TEXT'
 
         return meta
 
     def get_test_parameters(self):
-        return ['testDuration','failCount','passCount','skipCount',"successRate"]
+        return ['testDuration','testCount','failCount','passCount','skipCount',"successRate"]
 
     def get_test_query(self):
         meta = {}
