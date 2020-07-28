@@ -1,11 +1,11 @@
 {
-  "jobName" : "job-name",
-  "hostName" : "--.---.--.--",
-  "jenkinsUrl" : "jenkinsUrl",
-  "jenkinsUser": "username",
-  "jenkinsPass": "pass",
-  "databaseName" : "databasename",
-  "databaseUser" : "admin",
-  "databasePass" : "admin",
+  "jobName" : "YOUR_JOB_NAME",
+  "hostName" : "YOUR_IP",
+  "jenkinsUrl" : "YOUR JENKINS URL",
+  "jenkinsUser": "JENKINS_USER",
+  "jenkinsPass": "JENKINS_PASS",
+  "databaseName" : "DATABASE_NAME",
+  "databaseUser" : "DB USER AS IN COMPOSE FILE",
+  "databasePass" : "DB PASS AS IN COMPOSE FILE",
   "port" : 5432
 }
