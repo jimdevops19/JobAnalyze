@@ -1,0 +1,11 @@
+server {
+  listen ${NGINX_PORT};
+  server_name ${NGINX_HOST};
+  root /usr/share/nginx/html;
+  index index.html index.htm;
+
+  location / {
+   proxy_pass ${NGINX_PROXY_PASS};
+  }
+}
+
