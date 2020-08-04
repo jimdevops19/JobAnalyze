@@ -1,10 +1,14 @@
 # Job Analyzer with Grafana Dashboards
-###Repository to display statistics of Jenkins jobs visualized.
+
+##Repository to display statistics of Jenkins jobs visualized.
+
  - Delivered by composed service with Grafana reading from an Postgresql DB Source.
  - Runs NGINX for referring the Grafana default port to a DNS name as well.
 
 
+
 #Services:
+
  - NGINX:
     - Change Value for those environment Variables:
         - NGINX_HOST - Your full DNS Name.
@@ -28,7 +32,9 @@
         - PGADMIN_DEFAULT_EMAIL
         - PGADMIN_DEFAULT_PASSWORD
 
+
 #Execution Options:
+
   - After cloning the Repo, Edition of **configuration.json** is required:
       - jobName : The job's name as it is in the config.
       - hostName : Machine Public IP
